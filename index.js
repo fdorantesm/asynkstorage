@@ -59,4 +59,4 @@ class AsyncLocalStorage {
 
 }
 
-module.exports = BaseApi;
+module.exports = AsyncLocalStorage;

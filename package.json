@@ -1,7 +1,7 @@
 {
   "name": "asynkstorage",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Promise-based API for Browser localStorage",
   "main": "index.js",
   "repository": {
