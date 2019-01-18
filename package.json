@@ -1,7 +1,7 @@
 {
   "name": "asynkstorage",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Promise-based API for Browser localStorage",
   "main": "index.js",
   "repository": {
@@ -20,7 +20,7 @@
     "async",
     "promise"
   ],
-  "author": "Fernando Dorantes (https://merenguemerengue.com)",
+  "author": "Fernando Dorantes (https://github.com/fdorantesm)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fdorantesm/asynkstorage/issues"

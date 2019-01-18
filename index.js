@@ -59,4 +59,4 @@ class AsyncLocalStorage {
 
 }
 
-module.exports = AsyncLocalStorage;
+module.exports = new AsyncLocalStorage;
