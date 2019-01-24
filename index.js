@@ -3,31 +3,31 @@ class AsyncLocalStorage {
   getItem(key, defaultValue = null) {
     return new Promise((resolve, reject) => {
       if (key in localStorage) {
-        const obj = JSON.parse(localStorage.getItem(key));
-        resolve(obj);
+        const obj = JSON.parse(localStorage.getItem(key))
+        resolve(obj)
       }
       else {
-        reject(defaultValue)
+        resolve(defaultValue)
       }
-    });
+    })
   }
 
   setItem(key, val) {
     return new Promise((resolve) => {
-      const item = val;
-      localStorage.setItem(key, JSON.stringify(item));
-      resolve();
+      const item = val
+      localStorage.setItem(key, JSON.stringify(item))
+      resolve()
     });
   }
 
   removeKey(key) {
     return new Promise((resolve, reject) => {
       if (key in localStorage) {
-        localStorage.removeItem(key);
+        localStorage.removeItem(key)
         resolve()
       }
       else {
-        reject();
+        reject()
       }
     });
   }
@@ -35,28 +35,28 @@ class AsyncLocalStorage {
   has(key) {
     return new Promise((resolve, reject) => {
       if (key in localStorage) {
-        const obj = JSON.parse(localStorage.getItem(key));
-        resolve(true);
+        const obj = JSON.parse(localStorage.getItem(key))
+        resolve(true)
       } 
       else {
-        reject(false);
+        reject(false)
       }
-    });
+    })
   }
 
   clear() {
     return new Promise((resolve) => {
-      localStorage.clear();
-      resolve();
-    });
+      localStorage.clear()
+      resolve()
+    })
    }
 
   keys() {
     return new Promise((resolve) => {
-      resolve(Object.keys(localStorage));  
-    });
+      resolve(Object.keys(localStorage))
+    })
   }
 
 }
 
-module.exports = new AsyncLocalStorage;
+module.exports = new AsyncLocalStorage
