@@ -1,12 +1,15 @@
 {
   "name": "asynkstorage",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Promise-based API for Browser localStorage",
-  "main": "index.js",
+  "main": "dist/localStorage.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fdorantesm/asynkstorage.git"
+    "url": "https://github.com/fdorantesm/asynkstorage"
+  },
+  "scripts": {
+    "build": "babel src/localStorage.js -o dist/localStorage.js --presets=@babel/preset-env"
   },
   "keywords": [
     "localStorage",
@@ -27,5 +30,9 @@
   },
   "homepage": "https://github.com/fdorantesm/asynkstorage#readme",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1"
+  }
 }
