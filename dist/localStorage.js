@@ -22,7 +22,7 @@ function () {
           var obj = JSON.parse(localStorage.getItem(key));
           resolve(obj);
         } else {
-          reject(defaultValue);
+          resolve(defaultValue);
         }
       });
     }
