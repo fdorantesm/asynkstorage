@@ -43,8 +43,8 @@ function () {
       });
     }
   }, {
-    key: "removeKey",
-    value: function removeKey(key) {
+    key: "removeItem",
+    value: function removeItem(key) {
       return new Promise(function (resolve, reject) {
         if (key in localStorage) {
           localStorage.removeItem(key);

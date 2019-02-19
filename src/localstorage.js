@@ -28,7 +28,7 @@ class AsyncLocalStorage {
     });
   }
 
-  removeKey(key) {
+  removeItem(key) {
     return new Promise((resolve, reject) => {
       if (key in localStorage) {
         localStorage.removeItem(key)
