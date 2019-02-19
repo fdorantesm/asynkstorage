@@ -3,8 +3,16 @@ class AsyncLocalStorage {
   getItem(key, defaultValue = null) {
     return new Promise((resolve, reject) => {
       if (key in localStorage) {
-        const obj = JSON.parse(localStorage.getItem(key))
-        resolve(obj)
+        let val
+        try {
+          val = JSON.parse(localStorage.getItem(key))
+        }
+        catch (e) {
+          val = localStorage.getItem(key)
+        } 
+
+        resolve(val)
+        
       }
       else {
         resolve(defaultValue)
@@ -14,8 +22,8 @@ class AsyncLocalStorage {
 
   setItem(key, val) {
     return new Promise((resolve) => {
-      const item = val
-      localStorage.setItem(key, JSON.stringify(item))
+      val = Object.isExtensible(val) ? JSON.stringify(val) : val
+      localStorage.setItem(key, val)
       resolve()
     });
   }

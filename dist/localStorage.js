@@ -19,8 +19,15 @@ function () {
       var defaultValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
       return new Promise(function (resolve, reject) {
         if (key in localStorage) {
-          var obj = JSON.parse(localStorage.getItem(key));
-          resolve(obj);
+          var val;
+
+          try {
+            val = JSON.parse(localStorage.getItem(key));
+          } catch (e) {
+            val = localStorage.getItem(key);
+          }
+
+          resolve(val);
         } else {
           resolve(defaultValue);
         }
@@ -30,8 +37,8 @@ function () {
     key: "setItem",
     value: function setItem(key, val) {
       return new Promise(function (resolve) {
-        var item = val;
-        localStorage.setItem(key, JSON.stringify(item));
+        val = Object.isExtensible(val) ? JSON.stringify(val) : val;
+        localStorage.setItem(key, val);
         resolve();
       });
     }
